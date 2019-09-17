@@ -6,6 +6,8 @@
 #include "GameFramework/Actor.h"
 #include "SneakyShooterProjectile.generated.h"
 
+class UparticleSystem;
+
 UCLASS(config=Game)
 class ASneakyShooterProjectile : public AActor
 {
@@ -18,6 +20,9 @@ class ASneakyShooterProjectile : public AActor
 	/** Projectile movement component */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Movement, meta = (AllowPrivateAccess = "true"))
 	class UProjectileMovementComponent* ProjectileMovement;
+
+	UPROPERTY(EditDefaultsOnly, Category = "FX")
+	UParticleSystem* ExplosionEffect;
 
 public:
 	ASneakyShooterProjectile();
