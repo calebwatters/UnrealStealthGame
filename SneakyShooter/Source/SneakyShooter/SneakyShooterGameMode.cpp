@@ -15,3 +15,13 @@ ASneakyShooterGameMode::ASneakyShooterGameMode()
 	// use our custom HUD class
 	HUDClass = ASneakyShooterHUD::StaticClass();
 }
+
+void ASneakyShooterGameMode::CompleteMission(APawn* InstigatorPawn)
+{
+	if (InstigatorPawn) 
+	{
+		InstigatorPawn->DisableInput(nullptr);
+	}
+
+	OnMissionCompleted(InstigatorPawn);
+}
